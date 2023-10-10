@@ -1,0 +1,52 @@
+// task1
+function arr(num1, num2, num3, ...args) {
+    let el = 1
+    for (let num of args) {
+        el *= num
+        // console.log(el)
+    }
+    return [num1 + num2 + num3, el]
+}
+
+let result = arr(2, 4, 6, 8, 10)
+console.log(result)
+
+
+// task2
+
+const user = {
+
+    address:
+    {
+        city: 'Kutaisi'
+
+    }
+
+}
+// const { address: { city } } = user
+// console.log(city)
+
+const { address: { city } = {} } = user
+console.log(city)
+
+
+
+// task3
+const myUser = {
+    banks: ['bank1', 'bank2', 'bank3'],
+    address:
+    {
+        city: "kutaisi",
+        str: "kostava1"
+    }
+}
+
+const user2 = {
+    banks: { ...user.banks },
+    ...user,
+    addres: {
+        ...user.address.city
+    },
+
+}
+
